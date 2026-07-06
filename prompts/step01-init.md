@@ -1,6 +1,6 @@
-# Step 1 - Initialize Project
+# Step 1 - プロジェクト初期設定
 
-Read the following documents before making any changes.
+作業を始める前に、以下のドキュメントを必ず読んでください。
 
 - AGENTS.md
 - docs/product-spec.md
@@ -8,25 +8,32 @@ Read the following documents before making any changes.
 - docs/roadmap.md
 - docs/DECISIONS.md
 
-Your goal is ONLY to initialize the project.
+## 目的
 
-Tasks:
+Fast16プロジェクトの初期設定のみを行います。
 
-- Verify the Expo project structure
-- Install only the dependencies required for MVP
-- Organize folders according to architecture.md
-- Do not implement any UI
-- Do not add unnecessary packages
+## 作業内容
 
-Before coding:
+- Expoプロジェクトの構成を確認する
+- MVPに必要なライブラリのみ追加する
+- architecture.mdに従ってフォルダ構成を整える
+- UIはまだ実装しない
+- 不要なライブラリは追加しない
 
-- Explain your plan
-- List files to be changed
+## コードを書く前
 
-After completion:
+以下を説明してください。
 
-- Summarize what was done
-- Explain how to verify
-- Stop and wait for the next instruction
+- 今回やること
+- 変更するファイル
+- 追加するライブラリ（理由も含む）
 
-Do not implement anything outside this scope.
+## 完了後
+
+以下を報告してください。
+
+- 実施した内容
+- 動作確認方法
+- 次に実装するべき内容
+
+完了したら停止してください。

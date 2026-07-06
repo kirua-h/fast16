@@ -1,140 +1,119 @@
-# Product Specification
+# プロダクト仕様書
 
-## Overview
+## 概要
 
-Fast16 is an iPhone application for managing 16-hour intermittent fasting.
+Fast16は16時間断食を管理するiPhoneアプリです。
 
-The app is designed to be extremely simple.
-The user only needs to press one button when starting a meal.
+食事を始めるタイミングでボタンを押すだけで、次に食事できるまでの残り時間を確認できます。
 
-The app continuously displays the remaining fasting time and the next available eating time.
+誰でも迷わず使える、シンプルなアプリを目指します。
 
 ---
 
-# Target Platform
+# 対応プラットフォーム
 
 - iPhone
-- iOS only
+- iOSのみ
 
 ---
 
-# MVP Goals
+# MVPで実装する機能
 
-The first version of the application must provide only the following features.
-
-## Features
-
-- Record meal start time
-- Store the latest meal start time locally
-- Calculate the end of a 16-hour fasting period
-- Display remaining fasting time
-- Display next available eating time
-- Continue working after the app is restarted
-
-No additional features should be implemented unless explicitly requested.
+- 食事開始時刻の記録
+- 食事開始時刻のローカル保存
+- 16時間後の時刻を計算
+- 残り時間の表示
+- 次に食事できる時刻の表示
+- アプリを再起動しても記録を保持する
 
 ---
 
-# Screens
+# 画面
 
-## Home Screen
+## ホーム画面
 
-Displays:
+表示内容
 
-- App title
-- Fasting status
-- Remaining fasting time
-- Next available eating time
-- Previous meal start time
-- Meal Start button
+- タイトル
+- 断食状態
+- 残り時間
+- 次に食事できる時刻
+- 前回食事開始時刻
+- 食事開始ボタン
 
-There is only one screen in MVP.
+MVPではこの1画面のみです。
 
 ---
 
-# User Flow
+# ユーザーの流れ
 
-User opens the app.
+アプリを開く
 
 ↓
 
-Remaining fasting time is displayed.
+残り時間を確認する
 
 ↓
 
-User starts eating.
+食事を始める
 
 ↓
 
-Presses "Start Meal".
+「食事開始」を押す
 
 ↓
 
-Current date and time are saved.
+現在時刻を保存する
 
 ↓
 
-16-hour fasting timer starts.
-
-↓
-
-Countdown updates automatically.
+16時間のカウントダウンが始まる
 
 ---
 
-# Meal Button
+# 食事開始ボタン
 
-When pressed:
+押したとき
 
-- Save current date and time
-- Restart fasting timer
-- Refresh UI immediately
+- 現在時刻を保存する
+- 16時間タイマーを開始する
+- 画面を更新する
 
-No confirmation dialog.
-
----
-
-# Data Storage
-
-Only one value is stored.
-
-```
-
-lastMealTime: Date
-
-```
-
-Storage:
-
-- AsyncStorage
+確認ダイアログは表示しません。
 
 ---
 
-# UI Principles
+# 保存するデータ
 
-The application should feel like a native Apple application.
+保存するデータは1つだけです。
 
-Principles:
+lastMealTime
 
-- Minimal
-- Calm
-- Large spacing
-- Clear typography
-- One primary action
-- Countdown is the most important element
+保存先
+
+AsyncStorage
 
 ---
 
-# Non Goals (MVP)
+# UI方針
 
-Do NOT implement:
+Apple純正アプリのようなデザインを採用します。
 
-- Authentication
-- Cloud sync
-- Social features
-- Ads
-- Notifications
-- History
-- Weight tracking
-- Widget
-- Apple Watch
+- シンプル
+- 落ち着いた印象
+- 余白を広く取る
+- タイポグラフィを重視
+- ボタンは1つだけ目立たせる
+- 残り時間を最も大きく表示する
+
+---
+
+# MVPでは実装しないもの
+
+- ログイン
+- クラウド同期
+- 通知
+- 履歴
+- 体重管理
+- ウィジェット
+- Apple Watch対応

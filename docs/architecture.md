@@ -1,27 +1,22 @@
-# Architecture
+# アーキテクチャ
 
-## Overview
-
-Fast16 follows a simple layered architecture.
+## 全体構成
 
 ```
-
 UI
 ↓
-Components
+コンポーネント
 ↓
 Hooks
 ↓
-Storage / Utilities
-
+ストレージ・ユーティリティ
 ```
 
 ---
 
-# Folder Structure
+## フォルダ構成
 
 ```
-
 app/
 components/
 hooks/
@@ -29,24 +24,23 @@ storage/
 utils/
 types/
 assets/
-
 ```
 
 ---
 
-# Responsibilities
+## 各フォルダの役割
 
-## app/
+### app
 
-Application entry point and screen definitions.
+画面定義を管理します。
 
 ---
 
-## components/
+### components
 
-Reusable UI components.
+再利用できるUIコンポーネントを配置します。
 
-Examples:
+例
 
 - Header
 - Countdown
@@ -54,94 +48,88 @@ Examples:
 - StatusCard
 - MealInfo
 
-Components should remain small and focused.
+---
+
+### hooks
+
+ロジックを管理します。
+
+例
+
+- useCountdown
+
+UIの処理は書きません。
 
 ---
 
-## hooks/
+### storage
 
-Business logic.
+ローカル保存を担当します。
 
-Examples:
+- 保存
+- 読み込み
 
-- useCountdown()
-
-Hooks should not contain UI.
-
----
-
-## storage/
-
-Reading and writing local data.
-
-Responsibilities:
-
-- Save last meal time
-- Load last meal time
-
-Uses AsyncStorage.
+AsyncStorageを使用します。
 
 ---
 
-## utils/
+### utils
 
-Pure helper functions.
+共通処理を配置します。
 
-Examples:
+例
 
-- Calculate remaining time
-- Calculate next meal time
-- Date formatting
+- 残り時間計算
+- 次回食事時刻計算
+- 日付フォーマット
 
-Utility functions should not access storage.
+ストレージにはアクセスしません。
 
 ---
 
-# Data Flow
+# データの流れ
 
 ```
+食事開始ボタン
 
-User taps Meal Button
 ↓
 
-Current Date
+現在時刻取得
+
 ↓
 
-Save to AsyncStorage
+AsyncStorageへ保存
+
 ↓
 
-Update State
+状態更新
+
 ↓
 
-Countdown recalculates
+残り時間再計算
+
 ↓
 
-UI refreshes
-
+画面更新
 ```
 
 ---
 
-# State
+# 状態管理
 
-MVP stores only:
-
-```
+MVPでは
 
 lastMealTime
 
-```
+のみ管理します。
 
-No global state management library is required.
-
-React state is sufficient.
+React標準のstateで十分です。
 
 ---
 
-# Component Tree
+# コンポーネント構成
 
 ```
-
 HomeScreen
 
 ├── Header
@@ -149,31 +137,25 @@ HomeScreen
 ├── Countdown
 ├── MealInfo
 └── MealButton
-
 ```
 
 ---
 
-# Design Principles
+# 設計方針
 
-- Single responsibility
-- Small components
-- Functional components
-- TypeScript only
-- No duplicated logic
-- Readability over cleverness
+- 1コンポーネント1責務
+- TypeScriptを使用
+- 関数コンポーネントを使用
+- 重複コードを書かない
+- 可読性を優先する
 
 ---
 
-# Future Extensions
+# 将来追加予定
 
-Architecture should allow future addition of:
-
-- Meal history
-- Weight tracking
-- Widgets
+- 履歴
+- 体重管理
+- ウィジェット
 - HealthKit
 - Apple Watch
-- Charts
-
-These features are NOT implemented in MVP.
+- グラフ

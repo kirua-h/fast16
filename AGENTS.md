@@ -1,83 +1,75 @@
-# Fast16 AI Development Guide
+# Fast16 AI開発ガイド
 
-## Project Overview
+## プロジェクト概要
 
-Fast16 is an iPhone application for 16-hour intermittent fasting.
+Fast16は16時間断食をサポートするiPhoneアプリです。
 
-The app must remain extremely simple.
+目的は「食事を開始した時刻を記録し、次に食事ができるまでの残り時間をシンプルに確認できること」です。
 
-The primary goal is to let the user know exactly when they can eat again.
-
-Do not add features unless requested.
+アプリはできる限りシンプルに保ち、必要以上の機能は追加しません。
 
 ---
 
-## Priorities
+## 開発方針
 
-1. Simplicity
-2. Reliability
-3. Readability
-4. Native iOS feel
+以下を優先してください。
 
----
-
-## Tech Stack
-
-Expo
-React Native
-TypeScript
+1. シンプルであること
+2. 安定して動作すること
+3. 読みやすいコードであること
+4. Apple純正アプリのような体験であること
 
 ---
 
-## UI Rules
+## 使用技術
 
-Follow Apple's Human Interface Guidelines.
-
-Use generous spacing.
-
-Avoid unnecessary colors.
-
-No decorative animations.
-
-The countdown timer is the primary focus of the screen.
+- Expo
+- React Native
+- TypeScript
 
 ---
 
-## Development Rules
+## UIルール
 
-Implement one feature at a time.
+Apple純正アプリのようなミニマルなデザインを採用します。
 
-Keep the application runnable after every change.
-
-Do not change specifications without approval.
-
-Do not install unnecessary packages.
-
-Keep components small.
-
-Avoid duplicated logic.
-
-Never use "any".
+- 余白を広く取る
+- 色は最小限にする
+- 派手なアニメーションは追加しない
+- 残り時間を画面で最も目立たせる
+- 情報量は必要最低限にする
 
 ---
 
-## Before Every Task
+## 開発ルール
 
-Explain
-
-- what you are going to build
-- which files will change
-- how to test it
-
-Then stop and wait for confirmation if requirements are unclear.
+- 1機能ずつ実装する
+- 常にアプリが起動する状態を維持する
+- 勝手に仕様を変更しない
+- 不要なライブラリを追加しない
+- コンポーネントは小さく保つ
+- 重複コードを書かない
+- TypeScriptでanyは使用しない
 
 ---
 
-## After Every Task
+## 作業開始前
 
-Report
+必ず以下を説明してください。
 
-- completed work
-- modified files
-- remaining tasks
-- possible improvements
+- 今回実装する内容
+- 変更するファイル
+- 動作確認方法
+
+仕様が曖昧な場合は質問してください。
+
+---
+
+## 作業完了後
+
+必ず以下を報告してください。
+
+- 実装内容
+- 変更したファイル
+- 動作確認方法
+- 次に実装すべき内容

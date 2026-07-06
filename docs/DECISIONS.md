@@ -1,101 +1,89 @@
-# Architectural Decisions
+# 設計判断記録
 
-This document records important project decisions and why they were made.
-
----
-
-## Use Expo
-
-Reason:
-
-- Faster development
-- Easier maintenance
-- Excellent AI support
-- Sufficient for MVP
+このファイルでは、プロジェクトの重要な設計判断とその理由を記録します。
 
 ---
 
-## iPhone Only
+## Expoを採用
 
-Reason:
+理由
 
-- Better focus
-- Better user experience
-- Faster development
-
-Android support may be considered later.
+- 開発速度を重視するため
+- 保守しやすいため
+- AIとの相性が良いため
 
 ---
 
-## One Screen Only
+## iPhone専用
 
-Reason:
+理由
 
-- Minimize complexity
-- Faster interaction
-- Easier maintenance
-
----
-
-## Apple-like Design
-
-Reason:
-
-- Timeless appearance
-- Familiar interaction patterns
-- Better readability
+- 対応範囲を絞るため
+- 品質を高めるため
+- MVPを早く完成させるため
 
 ---
 
-## No Notifications
+## 1画面構成
 
-Reason:
+理由
 
-Notifications are not essential for the first version.
-
-The user should be able to understand the fasting status simply by opening the app.
-
-Notifications may be reconsidered in future versions.
+- シンプルにするため
+- 操作を迷わせないため
+- 保守しやすくするため
 
 ---
 
-## No History in MVP
+## Apple純正デザイン
 
-Reason:
+理由
 
-The first goal is validating the core fasting timer experience.
-
-History will be implemented only after the core experience is stable.
-
----
-
-## No Weight Tracking in MVP
-
-Reason:
-
-Weight tracking is valuable but not required to validate the core product.
-
-It is planned for v1.2.
+- 長く使っても飽きにくい
+- 操作に迷わない
+- 見やすい
 
 ---
 
-## Keep Dependencies Minimal
+## 通知は実装しない
 
-Reason:
+理由
 
-- Smaller bundle
-- Easier maintenance
-- Fewer bugs
-- Better AI-generated code quality
+まずは「アプリを開けば状況が分かる」体験を完成させることを優先するため。
 
-Prefer native Expo APIs whenever possible.
+必要であれば将来追加する。
 
 ---
 
-## One Feature at a Time
+## 履歴はMVPに含めない
 
-Reason:
+理由
 
-Every implementation step should leave the application in a working state.
+まずは断食タイマーの体験を完成させることを優先する。
 
-Avoid implementing multiple major features in a single change.
+---
+
+## 体重管理は後から追加
+
+理由
+
+体重管理は便利だが、断食タイマーの価値を検証することが先。
+
+---
+
+## ライブラリは最小限
+
+理由
+
+- 保守しやすくするため
+- バグを減らすため
+- AIが理解しやすくするため
+
+Expo標準機能を優先して使用する。
+
+---
+
+## 1機能ずつ開発する
+
+理由
+
+毎回動作する状態を維持し、安全に開発を進めるため。

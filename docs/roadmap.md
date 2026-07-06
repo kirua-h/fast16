@@ -1,79 +1,59 @@
-# Roadmap
+# ロードマップ
 
 ## v1.0
 
-Core fasting timer.
+断食タイマー
 
-Features:
-
-- Meal start
-- Remaining countdown
-- Next meal time
-- Local storage
-- Dark mode
-
-Status:
-
-🚧 In Development
+- 食事開始
+- 残り時間
+- 次回食事時刻
+- ローカル保存
+- ダークモード
 
 ---
 
 ## v1.1
 
-Meal History
+履歴機能
 
-Features:
-
-- Save every meal
-- History screen
-- Delete history
+- 食事履歴
+- 履歴画面
+- 履歴削除
 
 ---
 
 ## v1.2
 
-Weight Tracking
+体重管理
 
-Features:
-
-- Record body weight
-- Weight history
-- Progress graph
+- 体重記録
+- 履歴表示
+- グラフ
 
 ---
 
 ## v1.3
 
-Home Screen Widget
+ホーム画面ウィジェット
 
-Features:
-
-- Remaining fasting time
-- Fasting status
-- Next meal time
+- 残り時間表示
+- 断食状態表示
+- 次回食事時刻表示
 
 ---
 
 ## v2.0
 
-Apple Health
+Apple連携
 
-Features:
-
-- HealthKit integration
-- Apple Watch support
-- iCloud sync
+- HealthKit
+- Apple Watch
+- iCloud同期
 
 ---
 
-# Long-Term Vision
+# 長期目標
 
-Fast16 should become a simple and beautiful fasting companion.
+Fast16を、シンプルで使いやすい断食サポートアプリに育てる。
 
-The app should always prioritize:
-
-- Simplicity
-- Speed
-- Native iOS experience
-
-New features should only be added if they improve the core fasting experience.
+新機能は「断食を継続しやすくするか」を基準に追加を判断する。
